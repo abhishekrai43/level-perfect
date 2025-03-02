@@ -1,0 +1,31 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.levelperfect">
+
+    <!-- Permission for overlay window -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/Theme.LevelPerfect"
+        android:label="LevelPerfect">
+
+        <!-- Main Activity with android:exported explicitly set -->
+        <activity android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Floating Indicator Service -->
+        <service
+            android:name=".FloatingIndicatorService"
+            android:permission="android.permission.SYSTEM_ALERT_WINDOW"
+            android:foregroundServiceType="mediaProjection"/>
+
+    </application>
+
+</manifest>
